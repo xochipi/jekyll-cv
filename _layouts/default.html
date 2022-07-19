@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
   <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
+    <aside>{% include sidebar.html %}</aside>
+    <main>
+      <section id="personal-statement">
+        {% include personal-statement.html name=page.name role=page.role content=page.content %}
+      </section>
+      <section>{% include work-experience.html %}</section>
+      <section>{% include education.html %}</section>
+    </main>
   </body>
-
 </html>
