@@ -7,5 +7,14 @@ baseurl: ""
 url: "https://fabiorubinacci.com"
 github_username:  xochipi
 
+# Collections
+collections:
+  works:
+  educations:
+  softwares:
+  technologies:
+  skills:
+  languages:
+
 # Build settings
 markdown: kramdown
