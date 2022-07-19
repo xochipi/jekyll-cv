@@ -1,1 +1,20 @@
-Education
+{{ "Education" | upcase }}
+{% for edu in educations %}
+<article>
+    <h1>{{ edu.title }}</h1>
+    <label>{{ edu.start_date | date_to_string }} - {{ edu.end_date | date_to_string }}</label>
+    {% assign institute = site.data.institutes[page.institute] %}
+    {% if institute %}
+    {% if institute.site != '' %}
+    <a href="{{ institute.site }}">site</a>
+    {% endif %}
+    <label>
+        {{ institute.name }} | {{ institute.address }}
+    </label>
+    {% endif %}
+    {{ content }}
+    {% for tag in edu.tags %}
+    <label>{{ tag | first }}</label>
+    {% endfor %}
+</article>
+{% endfor %}

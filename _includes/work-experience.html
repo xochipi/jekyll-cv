@@ -1,1 +1,20 @@
-Work Experience
+{{ "Work Experience" | upcase }}
+{% for work in works %}
+<article>
+    <h1>{{ work.title }}</h1>
+    <label>{{ work.start_date | date_to_string }} - {{ work.end_date | date_to_string }}</label>
+    {% assign company = site.data.companies[page.company] %}
+    {% if company %}
+    {% if company.site != '' %}
+    <a href="{{ company.site }}">site</a>
+    {% endif %}
+        <label>
+            {{ company.name }} | {{ company.address }}
+        </label>
+    {% endif %}
+    {{ content }}
+    {% for tag in work.tags %}
+    <label>{{ tag | first }}</label>
+    {% endfor %}
+</article>
+{% endfor %}
