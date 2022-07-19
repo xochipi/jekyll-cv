@@ -12,7 +12,7 @@
             {{ company.name }} | {{ company.address }}
         </label>
     {% endif %}
-    {{ content }}
+    {{ work.content }}
     {% for tag in work.tags %}
     <label>{{ tag | first }}</label>
     {% endfor %}
