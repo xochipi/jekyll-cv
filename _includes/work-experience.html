@@ -2,7 +2,7 @@
 {% for work in site.works %}
 <article>
     <h1>{{ work.title }}</h1>
-    <label>{{ work.start_date | date_to_string }} - {{ work.end_date | date_to_string }}</label>
+    <label>{{ work.start_date | date: "%B %Y" }} - {{ work.end_date | date: "%B %Y" }}</label>
     {% assign company = site.data.companies[page.company] %}
     {% if company %}
     {% if company.site != '' %}

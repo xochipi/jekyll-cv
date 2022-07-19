@@ -2,7 +2,7 @@
 {% for edu in site.educations %}
 <article>
     <h1>{{ edu.title }}</h1>
-    <label>{{ edu.start_date | date_to_string }} - {{ edu.end_date | date_to_string }}</label>
+    <label>{{ edu.start_date | date: "%B %Y" }} - {{ edu.end_date | date: "%B %Y" }}</label>
     {% assign institute = site.data.institutes[page.institute] %}
     {% if institute %}
     {% if institute.site != '' %}
