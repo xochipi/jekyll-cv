@@ -1,5 +1,5 @@
 {{ "Work Experience" | upcase }}
-{% for work in works %}
+{% for work in site.works %}
 <article>
     <h1>{{ work.title }}</h1>
     <label>{{ work.start_date | date_to_string }} - {{ work.end_date | date_to_string }}</label>

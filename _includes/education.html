@@ -1,5 +1,5 @@
 {{ "Education" | upcase }}
-{% for edu in educations %}
+{% for edu in site.educations %}
 <article>
     <h1>{{ edu.title }}</h1>
     <label>{{ edu.start_date | date_to_string }} - {{ edu.end_date | date_to_string }}</label>
