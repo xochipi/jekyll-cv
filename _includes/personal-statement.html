@@ -1,4 +1,4 @@
-<h1>{{ include.name | upcase }}</h1>
+<h1>{{ include.my_name | upcase }}</h1>
 <h2>{{ include.role | upcase }}</h2>
 <h3>{{ "Personal statement" | upcase }}</h3>
-<p>{{ include.content | markdownify }}</p>
+{{ include.content | markdownify }}
