@@ -1,1 +1,4 @@
-Personal Statement
+<h1>{{ include.name | upcase }}</h1>
+<h2>{{ include.role | upcase }}</h2>
+<h3>{{ "Personal statement" | upcase }}</h3>
+<p>{{ include.content | markdownify }}</p>

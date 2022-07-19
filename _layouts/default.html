@@ -4,7 +4,9 @@
   <body>
     <aside>{% include sidebar.html %}</aside>
     <main>
-      <section>{% include personal-statement.html %}</section>
+      <section id="personal-statement">
+        {% include personal-statement.html name=page.name role=page.role content=page.content %}
+      </section>
       <section>{% include work-experience.html %}</section>
       <section>{% include education.html %}</section>
     </main>
