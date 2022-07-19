@@ -3,7 +3,7 @@
 <article>
     <h1>{{ edu.title }}</h1>
     <label>{{ edu.start_date | date: "%B %Y" }} - {{ edu.end_date | date: "%B %Y" }}</label>
-    {% assign institute = site.data.institutes[page.institute] %}
+    {% assign institute = site.data.institutes[edu.institute] %}
     {% if institute %}
     {% if institute.site != '' %}
     <a href="{{ institute.site }}">site</a>
@@ -14,7 +14,7 @@
     {% endif %}
     {{ edu.content }}
     {% for tag in edu.tags %}
-    <label>{{ tag | first }}</label>
+    <label>{{ tag }}</label>
     {% endfor %}
 </article>
 {% endfor %}
