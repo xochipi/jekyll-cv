@@ -1,1 +1,33 @@
-SIDEBAR
+<section id="personal">
+    <figure>
+        <img src="" alt="profile">
+    </figure>
+    {% if page.motto %}
+    <h3>{{ "motto" | upcase }}</h3>
+    <em>{{ page.motto }}</em>
+    {% endif %}
+</section>
+<section id="contact">
+    <h3>{{ "contacts" | upcase }}</h3>
+    <ul>
+        <li>{{ page.address }}</li>
+        <li>{{ page.email }}</li>
+        <li><a href="{{ page.linkedin_url }}" target="_blank">{{ page.linkedin_url }}</a></li>
+    </ul>
+</section>
+<section id="expertise">
+    {% for expertise in site.data.expertises %}
+    <label>{{ expertise.section | upcase }}</label>
+    <ul>
+        {% for item in expertise.items %}
+        <li>
+            {{ item.level }} - {{ item.name }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</section>
+<section id="hobbies">
+    <h3>{{ "hobbies and interest" | upcase }}</h3>
+    {{ page.hobbies }}
+</section>
