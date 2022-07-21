@@ -1,7 +1,8 @@
 <div class="content-block">
     <section id="personal">
         <figure>
-            <img src="/assets/images/{{ page.profile_image }}" alt="profile">
+            {% assign profile_image = page.profile_image %}
+            <img src="{{ "/assets/images/" | prepend: site.baseurl | append: profile_image }}" alt="profile">
         </figure>
         {% if page.motto %}
         <h3>{{ "motto" | upcase }}</h3>
@@ -22,7 +23,7 @@
         <ul>
             {% for item in expertise.items %}
             <li>
-                <img src="assets/images/{{ item.level }}.png" alt="level-{{ item.level }}">
+                <img src="{{ "/assets/images/" | prepend: site.baseurl | append: item.level }}.png" alt="level-{{ item.level }}">
                 {{ item.name | capitalize }}
             </li>
             {% endfor %}
