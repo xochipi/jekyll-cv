@@ -11,10 +11,6 @@ github_username:  xochipi
 collections:
   works:
   educations:
-  softwares:
-  technologies:
-  skills:
-  languages:
 
 # Build settings
 markdown: kramdown

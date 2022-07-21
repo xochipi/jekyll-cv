@@ -1,0 +1,42 @@
+- section: "softwares"
+  items:
+    - name: "photoshop"
+      level: 3
+    - name: "illustrator"
+      level: 4
+    - name: "unity"
+      level: 3
+    - name: "unreal engine"
+      level: 2
+    - name: "blender"
+      level: 2
+- section: "technologies"
+  items:
+    - name: "html"
+      level: 4
+    - name: "scss"
+      level: 4
+    - name: "javascript"
+      level: 4
+    - name: "angular"
+      level: 3
+    - name: "git"
+      level: 3
+- section: "skills"
+  items:
+    - name: "communication skills"
+      level: 4
+    - name: "observation skills"
+      level: 4
+    - name: "team work"
+      level: 4
+    - name: "logo design"
+      level: 4
+    - name: "layout design"
+      level: 3
+- section: "languages"
+  items:
+    - name: "italian"
+      level: 4
+    - name: "english"
+      level: 3

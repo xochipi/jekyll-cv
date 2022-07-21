@@ -1,4 +1,4 @@
-{{ "Work Experience" | upcase }}
+<h3>{{ "Work Experience" | upcase }}</h3>
 {% for work in site.works %}
 <article>
     <h1>{{ work.title }}</h1>
@@ -13,8 +13,9 @@
         </label>
     {% endif %}
     {{ work.content }}
-    {% for tag in work.tags %}
-    <label>{{ tag }}</label>
-    {% endfor %}
+    {% if work.tags %}
+    {% assign tag_list = work.tags %}
+    {% include tag.html tag_list=tag_list %}
+    {% endif %}
 </article>
 {% endfor %}

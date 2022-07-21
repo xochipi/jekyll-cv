@@ -1,0 +1,116 @@
+---
+---
+@import "main";
+
+body {
+  #wrap {
+    display: flex;
+
+    & > * { padding: 100px 50px; }
+
+    #sidebar {
+      background: $primary-color;
+      flex-basis: 40%;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-end;
+
+      * { color: $white-color; }
+
+      .content-block { max-width: 250px; }
+
+      #personal {
+        img {
+          width: 250px;
+          height: 250px;
+          object-fit: cover;
+          object-position: center;
+          overflow: hidden;
+          border-radius: 40px;
+        }
+
+        em {
+          font-size: 1.4rem;
+          line-height: 1.4rem;
+        }
+      }
+
+      #contacts {
+        ul {
+          margin: 0;
+          list-style: none;
+
+          li {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+
+      #expertise {
+        ul {
+          margin: 0;
+          list-style: none;
+
+          li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+
+            img {
+              margin-right: 10px;
+              background: rgba( $white-color, .2 );
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    #main-content {
+      flex-grow: 1;
+
+      section { max-width: 80%; }
+
+      #info {
+        height: 250px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        h1 { margin-bottom: 0; }
+
+        h2 { margin-top: 0; }
+      }
+
+      #work-experience, #education {
+
+        #tag-list {
+          ul {
+            margin: 0;
+            list-style: none;
+            display: flex;
+
+            li {
+              background: $primary-color;
+              padding: 5px 15px;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+
+              & + li {
+                margin-left: 10px;
+              }
+
+              label {
+                color: $white-color;
+                font-size: .8rem;
+                letter-spacing: .2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
