@@ -2,17 +2,19 @@
 <html>
   {% include head.html %}
   <body>
-    <aside>{% include sidebar.html %}</aside>
-    <main>
-      <section id="personal-statement">
-        {% include personal-statement.html my_name=page.my_name role=page.role content=page.content %}
-      </section>
-      <section id="work-experience">
-        {% include work-experience.html %}
-      </section>
-      <section id="education">
-        {% include education.html %}
-      </section>
-    </main>
+    <div id="wrap">
+      <aside id="sidebar">{% include sidebar.html %}</aside>
+      <main id="main-content">
+        <section id="personal-statement">
+          {% include personal-statement.html my_name=page.my_name role=page.role content=page.content %}
+        </section>
+        <section id="work-experience">
+          {% include work-experience.html %}
+        </section>
+        <section id="education">
+          {% include education.html %}
+        </section>
+      </main>
+    </div>
   </body>
 </html>

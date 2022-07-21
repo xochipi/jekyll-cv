@@ -1,4 +1,4 @@
-{{ "Education" | upcase }}
+<h3>{{ "Education" | upcase }}</h3>
 {% for edu in site.educations %}
 <article>
     <h1>{{ edu.title }}</h1>
@@ -13,8 +13,9 @@
     </label>
     {% endif %}
     {{ edu.content }}
-    {% for tag in edu.tags %}
-    <label>{{ tag }}</label>
-    {% endfor %}
+    {% if edu.tags %}
+    {% assign tag_list = edu.tags %}
+    {% include tag.html tag_list=tag_list %}
+    {% endif %}
 </article>
 {% endfor %}

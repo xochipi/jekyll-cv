@@ -1,0 +1,9 @@
+<div id="tag-list">
+    <ul>
+        {% for tag in tag_list %}
+        <li class="tag">
+            <label>{{ tag | upcase }}</label>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
