@@ -3,9 +3,14 @@ title: Fabio Rubinacci CV
 email: dev@fabiorubinacci.com
 description: >
   I'm Fabio Rubinacci a Web developer. Nice to meet you!
-baseurl: "https://fabiorubinacci.com"
+baseurl: ""
 url: "https://fabiorubinacci.com"
 github_username:  xochipi
+defaults:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
 
 # Collections
 collections:
