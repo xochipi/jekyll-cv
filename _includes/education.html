@@ -1,10 +1,11 @@
 <h3>{{ "Education" | upcase }}</h3>
-{% for edu in site.educations %}
+{% assign sorted_post = site.educations | sort: "start_date" | "reverse" %}
+{% for edu in sorted_post %}
 <article>
     <h1>{{ edu.title }}</h1>
     <div class="details">
         <div class="dates">
-            <label>{{ edu.start_date | date: "%B %Y" }} - {{ edu.end_date | date: "%B %Y" }}</label>
+            <label>{{ edu.start_date | date: "%B %Y" }} - {% unless edu.end_date %}today{% else %}{{ edu.end_date | date: "%B %Y" }}{% endunless %}</label>
         </div>
         {% assign institutes = site.data.institutes %}
         {% for institute in institutes %}
@@ -24,7 +25,7 @@
     <div class="content">
         {{ edu.content }}
     </div>
-    {% if edu.tags %}
+    {% if edu.tags != '' %}
         {% assign tag_list = edu.tags %}
         {% include_relative particles/tags.html tag_list=tag_list %}
     {% endif %}
