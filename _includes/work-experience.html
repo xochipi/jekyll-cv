@@ -1,10 +1,11 @@
 <h3>{{ "Work Experience" | upcase }}</h3>
-{% for work in site.works %}
+{% assign sorted_post = site.works | sort: "start_date" | "reverse" %}
+{% for work in sorted_post %}
 <article>
     <h1>{{ work.title }}</h1>
     <div class="details">
         <div class="dates">
-            <label>{{ work.start_date | date: "%B %Y" }} - {{ work.end_date | date: "%B %Y" }}</label>
+            <label>{{ work.start_date | date: "%B %Y" }} - {% unless work.end_date %}today{% else %}{{ work.end_date | date: "%B %Y" }}{% endunless %}</label>
         </div>
         {% assign companies = site.data.companies %}
         {% for company in companies %}
