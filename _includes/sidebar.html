@@ -1,8 +1,12 @@
 <div class="content-block">
     <section id="personal">
         <figure>
-            {% assign profile_image = page.profile_image %}
-            <img src="{{ "/assets/images/" | prepend: site.baseurl | append: profile_image }}" alt="profile">
+            {% assign image_files = site.static_files | where: "image", true %}
+            {% for image in image_files %}
+                {% if image.name contains page.profile_image %}
+                <img src="{{ image.path }}" alt="profile">
+                {% endif %}
+            {% endfor %}
         </figure>
         {% if page.motto %}
         <h3>{{ "motto" | upcase }}</h3>
@@ -23,7 +27,11 @@
         <ul>
             {% for item in expertise.items %}
             <li>
-                <img src="{{ "/assets/images/" | prepend: site.baseurl | append: item.level }}.png" alt="level-{{ item.level }}">
+                {% for image in image_files %}
+                    {% if image.basename contains item.level %}
+                    <img src="{{ image.path }}" alt="level-{{ item.level }}">
+                    {% endif %}
+                {% endfor %}
                 {{ item.name | capitalize }}
             </li>
             {% endfor %}
