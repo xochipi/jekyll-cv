@@ -6,7 +6,17 @@ body {
   #wrap {
     display: flex;
 
-    & > * { padding: 100px 50px; }
+    @include media-query($on-palm) {
+      flex-flow: column-reverse;
+    }
+
+    & > * {
+      padding: 100px 50px;
+
+      @include media-query($on-palm) {
+        padding: 50px 30px;
+      }
+    }
 
     #sidebar {
       background: $primary-color;
@@ -15,9 +25,19 @@ body {
       flex-flow: column;
       align-items: flex-end;
 
+      @include media-query($on-palm) {
+        flex-basis: unset;
+      }
+
       * { color: $white-color; }
 
-      .content-block { max-width: 250px; }
+      .content-block {
+        max-width: 250px;
+
+        @include media-query($on-palm) {
+          max-width: unset;
+        }
+      }
 
       #personal {
         img {
@@ -27,8 +47,12 @@ body {
           object-position: center;
           overflow: hidden;
           border-radius: 40px;
-        }
 
+          @include media-query($on-palm) {
+            width: 100%;
+          }
+        }
+    max-width: unset;
         em {
           font-size: 1.4rem;
           line-height: 1.4rem;
@@ -76,7 +100,13 @@ body {
     #main-content {
       flex-grow: 1;
 
-      section { max-width: 80%; }
+      section {
+        max-width: 80%;
+
+        @include media-query($on-palm) {
+          max-width: unset;
+        }
+      }
 
       #info {
         height: 250px;
