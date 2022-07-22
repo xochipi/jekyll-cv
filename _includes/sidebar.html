@@ -1,12 +1,7 @@
 <div class="content-block">
     <section id="personal">
         <figure>
-            {% assign image_files = site.static_files | where: "image", true %}
-            {% for image in image_files %}
-                {% if image.name contains page.profile_image %}
-                <img src="{{ image.path }}" alt="profile">
-                {% endif %}
-            {% endfor %}
+            {% include_relative particles/image.html image_name=page.profile_image %}
         </figure>
         {% if page.motto %}
         <h3>{{ "motto" | upcase }}</h3>
@@ -16,9 +11,9 @@
     <section id="contacts">
         <h3>{{ "contacts" | upcase }}</h3>
         <ul>
-            <li>{{ page.address }}</li>
-            <li>{{ page.email }}</li>
-            <li><a href="{{ page.linkedin_url }}" target="_blank">{{ page.linkedin_url }}</a></li>
+            <li>{% include_relative particles/image.html image_name="pin" %}{{ page.address }}</li>
+            <li>{% include_relative particles/image.html image_name="email" %}<a href="mailto:{{ page.email }}">{{ page.email }}</a></li>
+            <li>{% include_relative particles/image.html image_name="linkedin" %}<a href="{{ page.linkedin_url }}" target="_blank">{{ page.linkedin_url }}</a></li>
         </ul>
     </section>
     <section id="expertise">
@@ -27,11 +22,7 @@
         <ul>
             {% for item in expertise.items %}
             <li>
-                {% for image in image_files %}
-                    {% if image.basename contains item.level %}
-                    <img src="{{ image.path }}" alt="level-{{ item.level }}">
-                    {% endif %}
-                {% endfor %}
+                {% include_relative particles/image.html image_name=item.level %}
                 {{ item.name | capitalize }}
             </li>
             {% endfor %}
