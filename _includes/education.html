@@ -2,7 +2,7 @@
 {% assign sorted_post = site.educations | sort: "start_date" | "reverse" %}
 {% for edu in sorted_post %}
 <article>
-    <h1>{{ edu.title }}</h1>
+    <h4>{{ edu.title }}</h4>
     <div class="details">
         <div class="dates">
             <label>{{ edu.start_date | date: "%B %Y" }} - {% unless edu.end_date %}today{% else %}{{ edu.end_date | date: "%B %Y" }}{% endunless %}</label>
